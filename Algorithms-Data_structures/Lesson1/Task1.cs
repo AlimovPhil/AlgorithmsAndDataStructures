@@ -1,4 +1,4 @@
-﻿namespace Algorithms_Data_structures;
+﻿namespace Algorithms_Data_structures.Lesson1;
 
 internal class Task1
 {
@@ -60,7 +60,7 @@ internal class Task1
 
     public void TestFunc()
     {
-        Console.WriteLine ("Lesson 1, Task 1");
+        Console.WriteLine("Lesson 1, Task 1");
 
         SimpleNum(2); // проверки с простыми числами
         SimpleNum(97);

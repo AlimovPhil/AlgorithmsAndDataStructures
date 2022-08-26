@@ -1,6 +1,4 @@
-﻿using Algorithms_Data_structures;
-
-namespace Algorithms_Data_structures;
+﻿namespace Algorithms_Data_structures.Lesson1;
 
 public class Task2
 {
@@ -29,4 +27,4 @@ public class Task2
         return sum;  // O(1)
     }
 }
-        // Ответ: сложность функции O( n*(n*(n*1*1))+1 ) = O(n^3)
+// Ответ: сложность функции O( n*(n*(n*1*1))+1 ) = O(n^3)

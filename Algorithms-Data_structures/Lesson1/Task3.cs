@@ -1,6 +1,4 @@
-﻿using Algorithms_Data_structures;
-
-namespace Algorithms_Data_structures;
+﻿namespace Algorithms_Data_structures.Lesson1;
 
 
 internal class Task3
