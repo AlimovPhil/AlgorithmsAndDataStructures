@@ -1,4 +1,4 @@
-﻿namespace Algorithms_Data_structures;
+﻿namespace Algorithms_Data_structures.Lesson2;
 
 public class BinarySearch
 {

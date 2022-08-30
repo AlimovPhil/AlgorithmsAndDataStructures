@@ -1,6 +1,6 @@
-﻿using static Algorithms_Data_structures.LinkedList;
+﻿using static Algorithms_Data_structures.Lesson2.LinkedList;
 
-namespace Algorithms_Data_structures;
+namespace Algorithms_Data_structures.Lesson2;
 
 public class LinkedList : ILinkedList
 {
@@ -101,7 +101,7 @@ public class LinkedList : ILinkedList
     }
     public void RemoveNode(int index)
     {
-        
+
         if (index > Count)
             throw new InvalidOperationException($"Элемент с индексом {index} не существует в этом списке.");
         if (index <= 0)
@@ -167,13 +167,13 @@ public interface ILinkedList
     /// </summary>
     /// <param name="position"></param>
     /// <param name="value"></param>
-    void AddNodeAfter(Node position, int value); 
+    void AddNodeAfter(Node position, int value);
 
     /// <summary>
     /// удаляет элемент по порядковому номеру
     /// </summary>
     /// <param name="index"></param>
-    void RemoveNode(int index); 
+    void RemoveNode(int index);
 
     /// <summary>
     /// удаляет указанный элемент
