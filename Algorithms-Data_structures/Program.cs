@@ -1,35 +1,26 @@
 ﻿using Algorithms_Data_structures;
 
+var rnd = new Random(26);
+var binSearch = new BinarySearch();
+var array = new int[100];
 
-var List1 = new LinkedList();
+for (int i = 0; i < array.Length; i++) // заполняем массив случайными числами от 0 до 100.
+    array[i] = rnd.Next(100);
 
-List1.AddNode(11);
-List1.AddNode(22);
-List1.AddNode(33);
-List1.AddNode(44);
-List1.AddNode(55);
+int test1 = 2; // числа которые требуется найти.
+int test2 = 91;
+int test3 = 150;
 
-Console.WriteLine("List1 список узлов:");
-List1.PrintAllNodes();
-Console.WriteLine($"Количество узлов: {List1.GetCount()}\n");
+Array.Sort(array); // сортируем массив перед выполнением бинарного поиска.
 
-Console.WriteLine("Добавление нового узла (66) после узла со значением (11)\n");
-var requestNode = List1.FindNode(11);
-List1.AddNodeAfter(requestNode, 66);
+int result = binSearch.Run(array, test1); // Ищем число 2. Оно находится в ячейке [1].
+Console.WriteLine(result); // Результат 1, верно.
 
-Console.WriteLine("List1 список узлов после добавления:");
-List1.PrintAllNodes();
-Console.WriteLine($"Количество узлов: {List1.GetCount()}\n");
+result = binSearch.Run(array, test2); // Ищем число 91. Оно находится в ячейке [92].
+Console.WriteLine(result); // Результат 92, верно.
 
-Console.WriteLine("Удаление узла со значением (11) из списка:");
-List1.RemoveNode(requestNode);
-List1.PrintAllNodes();
-Console.WriteLine($"Количество узлов: {List1.GetCount()}\n");
-
-Console.WriteLine("Удаление узла с индексом (2) из списка:");
-List1.RemoveNode(2);
-List1.PrintAllNodes();
-Console.WriteLine($"Количество узлов: {List1.GetCount()}\n");
+result = binSearch.Run(array, test3); // Ищем число 150. Его нет в данном массиве.
+Console.WriteLine(result); // Результат -1 (элемент отсутствует), верно.
 
 
 

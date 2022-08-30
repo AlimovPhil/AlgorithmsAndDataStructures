@@ -2,7 +2,7 @@
 
 public class BinarySearch
 {
-    public static int BinarySearch(int[] inputArray, int searchValue)
+    public int Run(int[] inputArray, int searchValue)
     {
         int min = 0;
         int max = inputArray.Length - 1;
@@ -22,7 +22,8 @@ public class BinarySearch
                 min = mid + 1;
             }
         }
-        return -1;
+        return -1; // Возвращает -1, если поиск не дал результатов.
     }
 
 }
+// Асимптотическая сложность функции: O(log n)
