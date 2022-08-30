@@ -1,5 +1,6 @@
 ﻿using Algorithms_Data_structures;
 
+
 var rnd = new Random(26);
 var binSearch = new BinarySearch();
 var array = new int[100];

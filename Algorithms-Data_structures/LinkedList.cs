@@ -8,7 +8,7 @@ public class LinkedList : ILinkedList
     {
         public int Value { get; set; }
         public Node? NextNode { get; set; }
-        public Node PrevNode { get; set; }
+        public Node? PrevNode { get; set; }
         internal Node(int value) => Value = value;
     }
 
@@ -18,11 +18,13 @@ public class LinkedList : ILinkedList
 
     public void PrintAllNodes()
     {
+        if (First is null)
+            throw new InvalidOperationException($"Поиск не может быть выполнен, в списке отсутсвуют элементы.");
         Node current = First;
         while (current != null)
         {
             Console.WriteLine(current.Value);
-            current = current.NextNode;
+            current = current.NextNode!;
         }
     }
     public void AddNode(int value)
@@ -39,7 +41,7 @@ public class LinkedList : ILinkedList
         else
         {
             node.PrevNode = Last;
-            Last.NextNode = node;
+            Last!.NextNode = node;
             Last = node;
         }
     }
@@ -55,7 +57,7 @@ public class LinkedList : ILinkedList
         Count++;
 
         position.NextNode = node;
-        node.NextNode.PrevNode = node;
+        node.NextNode!.PrevNode = node;
     }
 
     public int GetCount()
@@ -75,7 +77,7 @@ public class LinkedList : ILinkedList
         if (ReferenceEquals(node, First)) //удаление первого узла
         {
             First = node.NextNode;
-            First.PrevNode = null;
+            First!.PrevNode = null;
             Count--;
             return;
         }
@@ -106,27 +108,27 @@ public class LinkedList : ILinkedList
             throw new InvalidOperationException($"Укажите корректный номер элемента.");
         if (index == 1)
         {
-            Node first = First;
+            Node first = First!;
             First = first.NextNode;
-            First.PrevNode = null;
+            First!.PrevNode = null;
             Count--;
             return;
         }
         if (index == Count)
         {
-            Node last = Last;
+            Node last = Last!;
             Last = last.PrevNode;
             Last!.NextNode = null;
             Count--;
             return;
         }
 
-        Node current = First;
+        Node current = First!;
         for (int i = 1; i <= index && current != null; i++)
         {
             if (i != index)
             {
-                current = current.NextNode;
+                current = current.NextNode!;
                 continue;
             }
             RemoveNode(current);
@@ -136,10 +138,12 @@ public class LinkedList : ILinkedList
 
     public Node FindNode(int searchValue)
     {
+        if (First is null)
+            throw new InvalidOperationException($"Поиск не может быть выполнен, в списке отсутсвуют элементы.");
         Node current = First;
         while (current.Value != searchValue)
         {
-            current = current.NextNode;
+            current = current.NextNode!;
         }
         return current;
     }
