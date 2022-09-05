@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms_Data_structures
+namespace Algorithms_Data_structures.Lesson3
 {
     public class PointClass
     {
