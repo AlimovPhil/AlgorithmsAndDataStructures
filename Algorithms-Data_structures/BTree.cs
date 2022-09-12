@@ -103,6 +103,22 @@ public class BTree : ITree
         }
     }
 
+    public void BFS(BTree tree)
+    {
+        Queue<TreeNode> q = new Queue<TreeNode>();
+        q.Enqueue(Root);
+        while (q.Count > 0)
+        {
+            TreeNode current = q.Dequeue();
+            if (current == null)
+                continue;
+            q.Enqueue(current.LeftChild);
+            q.Enqueue(current.RightChild);
+
+            Console.Write($">{current.Value} ");
+        }
+    }
+
     public TreeNode GetRoot()
     {
         throw new NotImplementedException();

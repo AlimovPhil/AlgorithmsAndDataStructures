@@ -17,11 +17,15 @@ myTree.AddItem(44);
 
 myTree.PrintTree(myTree.Root, 1, 1);
 
-Console.WriteLine();
+Console.WriteLine("\nDepth First Search:");
 
 myTree.DFS(myTree);
 
+Console.WriteLine("\nBreadth First Search:");
 
-Console.WriteLine("Завершение работы программы...");
+myTree.BFS(myTree);
+
+
+Console.WriteLine("\nЗавершение работы программы...");
 Console.ReadLine();
 
