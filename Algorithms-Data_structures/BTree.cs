@@ -19,15 +19,16 @@ public class BTree : ITree
         public int Value { get => _Value; set => _Value = value; }
         public TreeNode LeftChild { get => _LeftChild; set => _LeftChild = value; }
         public TreeNode RightChild { get => _RightChild; set => _RightChild = value; }
-        //public TreeNode Parent { get; set; }
+        public TreeNode Parent { get; set; }
 
         public TreeNode(int value) => Value = value;
 
-        public TreeNode(int value, TreeNode left, TreeNode right)
+        public TreeNode(int value, TreeNode left, TreeNode right, TreeNode parent)
         {
             Value = value;
             LeftChild = left;
             RightChild = right;
+            Parent = parent;
         }
 
         public override bool Equals(object obj)
@@ -81,16 +82,32 @@ public class BTree : ITree
             return GetNodeByValue(value, root.RightChild);
     }
 
+    public void DFS(BTree tree)
+    {
+        if (tree.Root == null)
+            return;
+        var stack = new Stack<TreeNode>();
+        stack.Push(tree.Root);
+        while (stack.Count != 0)
+        {
+            TreeNode curr = stack.Pop();
+            Console.Write($">{curr.Value} ");
+            if (curr.LeftChild != null)
+            {
+                stack.Push(curr.LeftChild);
+            }
+            if (curr.RightChild != null)
+            {
+                stack.Push(curr.RightChild);
+            }
+        }
+    }
+
     public TreeNode GetRoot()
     {
         throw new NotImplementedException();
 
     }
-
-    //public void PrintTree()
-    //{
-    //    throw new NotImplementedException();
-    //}
     public int PrintTree(TreeNode node, int x, int y)
     {
         Console.SetCursorPosition(x, y);
