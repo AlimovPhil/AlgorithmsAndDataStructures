@@ -8,49 +8,6 @@ using System.Xml.Linq;
 
 namespace Algorithms_Data_structures
 {
-    //public class Graph
-    //{
-
-    //    public class Node<T,W>
-    //    {
-    //        public T Value { get; set; }
-    //        public List<Edge<T, W>> Edges { get; set; } //исходящие связи
-    //    }
-    //    public class Edge<T,W> //Ребро
-    //    {
-    //        public W Weight { get; set; } //вес связи
-    //        public Node<T, W> Node { get; set; } // узел, на который связь ссылается
-    //    }
-
-    //    public void AddNode<T,W>(Node<T, W> node, T nodeValue, W edgeWeight)
-    //    {
-    //        var newNode = new Node<T, W>()
-    //        {
-    //            Value = nodeValue,
-    //            Edges = new List<Edge<T, W>>()
-    //            {
-    //                new Edge<T, W>()
-    //                {
-    //                    Node = node,
-    //                    Weight = edgeWeight,
-    //                }
-    //            }
-    //        };
-
-    //        var newEdge = new Edge<T, W>()
-    //        {
-    //            Node = newNode,
-    //            Weight = edgeWeight
-    //        };
-
-    //        if (node.Edges == null)
-    //        {
-    //            node.Edges = new List<Edge<T, W>>();
-    //        }
-
-    //        node.Edges.Add(newEdge);
-    //    }
-    //}
     /// <summary>
     /// Граф
     /// </summary>
