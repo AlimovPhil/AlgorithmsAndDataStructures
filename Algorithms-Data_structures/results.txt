@@ -1,0 +1,5 @@
+﻿|    Method |        array |         arrName |          Mean |         Error |        StdDev |        Median |
+|---------- |------------- |---------------- |--------------:|--------------:|--------------:|--------------:|
+| SortArray | Int32[20000] |  Large Unsorted | 866,117.88 us | 25,084.236 us | 73,961.435 us | 878,156.05 us |
+| SortArray |  Int32[2000] | Medium Unsorted |   6,949.97 us |    215.627 us |    635.781 us |   7,125.68 us |
+| SortArray |   Int32[200] |  Small Unsorted |      88.21 us |      3.303 us |      9.740 us |      85.40 us |

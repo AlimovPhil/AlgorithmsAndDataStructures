@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BenchmarkDotNet.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,8 +26,16 @@ namespace Algorithms_Data_structures
 
             return listInput.ToArray();
         }
+        public IEnumerable<object[]> SampleArrays()
+        {
+            yield return new object[] { CreateRandomArray(200), "Small Unsorted" };
+            yield return new object[] { CreateRandomArray(2000), "Medium Unsorted" };
+            yield return new object[] { CreateRandomArray(20000), "Large Unsorted" };
+        }
 
-        public int[] SortArray(int[] array)
+        [Benchmark]
+        [ArgumentsSource(nameof(SampleArrays))]
+        public int[] SortArray(int[] array, string arrName)
         {
             List<int> sortedList = new();
             var minValue = array[0];
